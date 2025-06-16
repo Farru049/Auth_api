@@ -33,6 +33,9 @@ A modern web application for secure file uploads with user authentication.
 │   └── script.js          # Frontend JavaScript
 ├── utils/                 # Utility files
 │   └── cloudinary.js      # Cloudinary configuration
+├── Dockerfile             # Docker configuration file
+├── docker-compose.yml     # Docker Compose configuration
+├── .dockerignore          # Files to exclude from Docker image
 ├── server.js              # Express server setup
 ├── package.json           # Project dependencies
 └── README.md              # Project documentation
@@ -44,8 +47,9 @@ A modern web application for secure file uploads with user authentication.
 - Node.js
 - MongoDB Atlas account
 - Cloudinary account
+- Docker and Docker Compose (for containerized setup)
 
-### Installation
+### Standard Installation
 
 1. Clone the repository
    ```
@@ -71,6 +75,28 @@ A modern web application for secure file uploads with user authentication.
 4. Start the server
    ```
    npm start
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`
+
+### Docker Installation
+
+1. Clone the repository
+   ```
+   git clone https://github.com/Farru049/Auth_api.git
+   cd Auth_api
+   ```
+
+2. Create a `.env` file with the same variables as above
+
+3. Build and run with Docker Compose
+   ```
+   docker-compose up --build
+   ```
+
+4. For subsequent runs, you can simply use
+   ```
+   docker-compose up
    ```
 
 5. Open your browser and navigate to `http://localhost:3000`
