@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure File Upload App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-shield-alt"></i> Secure File Upload</h1>
+      <p class="tagline">Upload and secure your files with ease</p>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-section="signup-section">Sign Up</button>
+      <button class="tab-btn" data-section="login-section">Login</button>
+      <button class="tab-btn" data-section="upload-section">Upload</button>
+    </div>
+    
+    <div class="section active" id="signup-section">
+      <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+      <input type="email" id="signupEmail" placeholder="Enter your email">
+      <input type="password" id="signupPassword" placeholder="Create password">
+      <button onclick="signup()"><i class="fas fa-user-plus"></i> Create Account</button>
+    </div>
+
+    <div class="section" id="login-section">
+      <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+      <input type="email" id="loginEmail" placeholder="Your email">
+      <input type="password" id="loginPassword" placeholder="Your password">
+      <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Log In</button>
+    </div>
+
+    <div class="section" id="upload-section">
+      <h2><i class="fas fa-cloud-upload-alt"></i> Upload File</h2>      <div class="file-upload-container">
+        <label for="fileInput" class="file-upload-label">
+          <i class="fas fa-file-upload"></i>
+          <span>Choose a file</span>
+          <input type="file" id="fileInput" class="file-input" accept="image/*">
+        </label>
+        <div class="file-info" id="fileInfo">No file selected</div>
+      </div>
+      <div class="image-preview-container" id="imagePreviewContainer">
+        <img id="imagePreview" class="image-preview" />
+      </div>
+      <button onclick="uploadFile()" id="uploadBtn"><i class="fas fa-upload"></i> Upload File</button>
+      <button onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+
+    <div id="output-container">
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Processing...</p>
+      </div>
+      <div id="output"></div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 Secure File Upload. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
